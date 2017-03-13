@@ -5,5 +5,6 @@ go:
 
 install:
   - go get -v github.com/Masterminds/glide
+  - go install github.com/onsi/ginkgo/ginkgo
 
-script: glide install -strip-vendor
+script: make ginkgo

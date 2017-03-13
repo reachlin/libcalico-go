@@ -9,6 +9,12 @@ CALICO_BUILD?=calico/go-build
 PACKAGE_NAME?=projectcalico/libcalico-go
 LOCAL_USER_ID?=$(shell id -u $$USER)
 
+glide: glide.yaml
+	glide install -strip-vendor
+
+ginkgo: glide
+	ginkgo -r --randomizeAllSpecs --randomizeSuites --race --trace
+
 # Use this to populate the vendor directory after checking out the repository.
 # To update upstream dependencies, delete the glide.lock file first.
 vendor: glide.yaml
