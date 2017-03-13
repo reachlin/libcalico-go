@@ -10,4 +10,4 @@ install:
   - go install github.com/onsi/ginkgo/ginkgo
   - glide install
 
-script: go build
+script: go test $(glide novendor)
