@@ -5,6 +5,7 @@ go:
 
 install:
   - go get -v github.com/Masterminds/glide
+  - go get github.com/onsi/gomega
   - go install github.com/onsi/ginkgo/ginkgo
 
 script: make ginkgo
