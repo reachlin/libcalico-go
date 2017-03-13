@@ -1,11 +1,6 @@
-sudo: required
-
 language: go
 
 go:
   - 1.7.x
 
-services:
-  - docker
-
-script: make vendor
+script: glide install -strip-vendor
