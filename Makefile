@@ -13,7 +13,7 @@ glide: glide.yaml
 	glide install -strip-vendor
 
 ginkgo: glide
-	ginkgo -r --randomizeAllSpecs --randomizeSuites --race --trace
+	ginkgo -r --randomizeAllSpecs --randomizeSuites --race --trace --skipPackage vendor
 
 # Use this to populate the vendor directory after checking out the repository.
 # To update upstream dependencies, delete the glide.lock file first.
