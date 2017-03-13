@@ -1,3 +1,5 @@
+go_import_path: $TRAVIS_BUILD_DIR
+
 language: go
 
 go:
