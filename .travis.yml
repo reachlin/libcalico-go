@@ -1,6 +1,11 @@
+sudo: required
+
 language: go
 
 go:
   - 1.7.x
 
-script: make ut
+services:
+  - docker
+
+script: make vendor
