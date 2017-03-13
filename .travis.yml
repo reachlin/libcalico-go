@@ -1,8 +1,5 @@
 language: go
 
-env:
-  - TRAVIS_BUILD_DIR=$HOME/gopath/src/github.com/libcalico-go
-
 go:
   - 1.7.x
 
