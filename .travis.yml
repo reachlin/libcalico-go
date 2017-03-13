@@ -3,4 +3,7 @@ language: go
 go:
   - 1.7.x
 
+install:
+  - go get -v github.com/Masterminds/glide
+
 script: glide install -strip-vendor
