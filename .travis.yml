@@ -18,5 +18,5 @@ script:
   - mkdir -p $HOME/gopath/src/github.ibm.com/projectcalico/
   - cp -r ../libcalico-go $HOME/gopath/src/github.ibm.com/projectcalico/
   - export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.ibm.com/projectcalico/libcalico-go
-  - cd $TRAVIS_BUILD_DIR
+  - cd $HOME/gopath/src
   - make ut
