@@ -19,3 +19,4 @@ install:
 
 script:
   - make glide
+  - go build $(glide novendor)
