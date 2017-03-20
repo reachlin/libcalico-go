@@ -8,7 +8,6 @@ go:
   - 1.7.x
 
 install:
-  - go get -v github.com/Masterminds/glide
   - go get github.com/onsi/gomega
   - go get github.com/onsi/ginkgo
   - go install github.com/onsi/ginkgo/ginkgo
@@ -19,4 +18,5 @@ script:
   - cp -r ../libcalico-go $HOME/gopath/src/github.com/projectcalico/
   - export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.com/projectcalico/libcalico-go
   - cd $TRAVIS_BUILD_DIR
+  - go get -v github.com/Masterminds/glide
   - make ut
