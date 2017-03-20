@@ -8,15 +8,14 @@ go:
   - 1.7.x
 
 install:
+  - mkdir -p $HOME/gopath/src/github.com/projectcalico/libcalico-go
+  - rsync -az ${TRAVIS_BUILD_DIR}/ $HOME/gopath/src/github.com/projectcalico/libcalico-go/
+  - export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.com/projectcalico/libcalico-go
+  - cd $TRAVIS_BUILD_DIR
+  - go get -v github.com/Masterminds/glide
   - go get github.com/onsi/gomega
   - go get github.com/onsi/ginkgo
   - go install github.com/onsi/ginkgo/ginkgo
 
 script:
-  - mkdir -p $HOME/.glide
-  - mkdir -p $HOME/gopath/src/github.com/projectcalico/
-  - cp -r ../libcalico-go $HOME/gopath/src/github.com/projectcalico/
-  - export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.com/projectcalico/libcalico-go
-  - cd $TRAVIS_BUILD_DIR
-  - go get -v github.com/Masterminds/glide
   - make ut
