@@ -25,6 +25,7 @@ type DatastoreType string
 const (
 	EtcdV2     DatastoreType = "etcdv2"
 	Kubernetes DatastoreType = "kubernetes"
+	FileConfig DatastoreType = "file"
 )
 
 // CalicoAPIConfig contains the connection information fo
