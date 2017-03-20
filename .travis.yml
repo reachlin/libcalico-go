@@ -15,8 +15,8 @@ install:
 
 script:
   - mkdir -p $HOME/.glide
-  - mkdir -p $HOME/gopath/src/github.ibm.com/projectcalico/
-  - cp -r ../libcalico-go $HOME/gopath/src/github.ibm.com/projectcalico/
-  - export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.ibm.com/projectcalico/libcalico-go
-  - cd $HOME/gopath/src
+  - mkdir -p $HOME/gopath/src/github.com/projectcalico/
+  - cp -r ../libcalico-go $HOME/gopath/src/github.com/projectcalico/
+  - export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.com/projectcalico/libcalico-go
+  - cd $TRAVIS_BUILD_DIR
   - make ut
