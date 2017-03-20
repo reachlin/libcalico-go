@@ -15,16 +15,8 @@
 package file
 
 import (
-  goerrors "errors"
-  "strings"
-
-  "time"
-
-  log "github.com/Sirupsen/logrus"
   "github.com/projectcalico/libcalico-go/lib/backend/api"
   "github.com/projectcalico/libcalico-go/lib/backend/model"
-  "github.com/projectcalico/libcalico-go/lib/errors"
-  "golang.org/x/net/context"
 )
 
 type BackendConfig struct {
@@ -43,20 +35,41 @@ type FileClient struct {
 }
 
 func NewConfigFile(config *BackendConfig) (*FileClient, error) {
-  return &FileClient{fileName: client}, nil
+  return &FileClient{fileName: ""}, nil
 }
 
-// EnsureInitialized makes sure that the etcd data is initialized for use by
-// Calico.
-func (c *FileClient) EnsureInitialized() error {
+func (c *FileClient) Apply(d *model.KVPair) (*model.KVPair, error) {
+  return nil, nil
+}
+
+func (c *FileClient)  Create(object *model.KVPair) (*model.KVPair, error) {
+  return nil, nil
+}
+
+func (c *FileClient) Update(object *model.KVPair) (*model.KVPair, error) {
+  return nil, nil
+}
+
+func (c *FileClient) Delete(object *model.KVPair) error {
   return nil
 }
 
-// EnsureCalicoNodeInitialized performs additional initialization required
-// by the calico/node components [startup/ipip-allocation/confd].  This is a
-// temporary requirement until the calico/node components are updated to not
-// require special etcd setup, or until the global and per-node config is
-// reworked to allow the node to perform the necessary updates.
-func (c *FileClient) EnsureCalicoNodeInitialized(node string) error {
+func (c *FileClient)  Get(key model.Key) (*model.KVPair, error) {
+  return nil, nil
+}
+
+func (c *FileClient)  List(list model.ListInterface) ([]*model.KVPair, error) {
+  return nil, nil
+}
+
+func (c *FileClient) Syncer(callbacks api.SyncerCallbacks) api.Syncer {
+  return nil
+}
+
+func (c *FileClient)  EnsureInitialized() error {
+  return nil
+}
+
+func (c *FileClient)  EnsureCalicoNodeInitialized(node string) error {
   return nil
 }

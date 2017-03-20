@@ -36,7 +36,7 @@ func NewClient(config api.CalicoAPIConfig) (c bapi.Client, err error) {
 	case api.Kubernetes:
 		c, err = k8s.NewKubeClient(&config.Spec.KubeConfig)
 	case api.FileConfig:
-		c, err = file.NewConfigFile(&config.Spec.KubeConfig)
+		c, err = file.NewConfigFile(&config.Spec.BackendConfig)
 	default:
 		err = errors.New(fmt.Sprintf("Unknown datastore type: %v",
 			config.Spec.DatastoreType))

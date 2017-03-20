@@ -18,6 +18,7 @@ import (
 	"github.com/projectcalico/libcalico-go/lib/api/unversioned"
 	"github.com/projectcalico/libcalico-go/lib/backend/etcd"
 	"github.com/projectcalico/libcalico-go/lib/backend/k8s"
+	"github.com/projectcalico/libcalico-go/lib/backend/file"
 )
 
 type DatastoreType string
@@ -49,6 +50,8 @@ type CalicoAPIConfigSpec struct {
 
 	// Inline the k8s config fields.
 	k8s.KubeConfig
+
+	file.BackendConfig
 }
 
 // NewCalicoAPIConfig creates a new (zeroed) CalicoAPIConfig struct with the
