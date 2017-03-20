@@ -18,4 +18,4 @@ install:
   - go install github.com/onsi/ginkgo/ginkgo
 
 script:
-  - make ut
+  - make glide
